@@ -1,0 +1,51 @@
+<program> ::= <stmt_list>
+<stmt_list> ::= <stmt>; | <stmt>; <stmt_list> | <if_stmt>; <stmt_list>
+<stmt> ::= <declare> | <assign> | <declare_assign> | <expr> | <loop> | <update_stmt> | #(times loop)WIP# |<func_call> |#?????????????#
+
+<declare> ::= CONSTANT <type><id> | <type><id> | <function_declaration>
+<function_declaration> ::= <type> FUNC <id>(<parameters>){<stmt_list><return_stmt>;} | <type> FUNC <id>(){<stmt_list><return_stmt>;} | VOID FUNC <id>(<parameters>){<stmt_list>} | VOID FUNC <id>(){<stmt_list>}
+<parameters> ::= <parameter> | <parameter> , <parameters>
+<parameter> ::= <type> <id> | <type> <id> = <literal>
+<return_stmt> ::= RETURN <expr> | RETURN
+<assign> ::= <id><assignment_op><expr> #** % */ +-
+
+<expr> ::= <id> | <literal> | <arithmetic_expr> | <logical_expr>
+<literal> ::= <int> | <string> | <char> | <float> | <long> | <double> | null
+<arithmetic_expr> ::= <arithmetic_expr> + <term> | <arithmetic_expr> - <term> | <term>
+<term> ::= <term> * <sub_term> | <term> / <sub_term> | <sub_term>
+<sub_term> ::= <term> ** <factor> | <term> % <factor> | <factor>
+<factor> ::= ( <arithmetic_expr> ) | <id> | <literal>
+
+<logical_expr> ::= <logical_expr> OR <logic_term> | <logic_term>
+<logic_term> ::= <logic_term> AND <logic_factor> | <logic_factor>
+<logic_factor> ::= (logical_expr) | !<logical_expr> | <id> | <literal>
+<declare_assign> ::= <declare> = <expr>
+
+<if_stmt> ::= <matched> | <unmatched>
+<matched> ::= if (<expr>) {<matched>} else {<matched>} | <non_if_stmt>
+<non_if_stmt> ::= <stmt>;<non_if_stmt> | <stmt>;
+<unmatched> ::= if (<expr>) {<stmt_list>} | if (<expr>) {<matched>} else {<unmatched>}
+
+
+
+
+
+<loop> ::= <for_loop> | <while_loop> | <dowhile_loop> | <times_loop>
+<for_loop> ::= for (<for_init>;<for_condition>;<for_update>) {<stmt_list>}
+<for_init> ::=  <for_init>, <assign> | <for_init>, <declare> | <for_init>, <declare_assign> | <declare_assign> | <assign> | <declare>
+<for_condition> ::= <expr>
+<for_check> ::= <expr>
+<for_update> ::= 
+<while_loop> ::= while (<expr>){<stmt_list>}
+
+<relational_op> ::= <= | >= | < | > | == 
+<assignment_op> ::= = | += | -= | *= | /= |**= | %=
+<id> ::= <char> | <char><id> | <id><digit>
+<int> ::= <digit> | <digit><int> | -<digit> | -<digit><int>
+<digit> ::= 0|1|2|3|4|5|6|7|8|9
+<char> ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+<type> ::= <numeric_type> | BOL
+<numeric_type> ::= <basic_numeric> | <floating_numeric> 
+<basic_numeric> ::= INT | LNG | CHR | STR
+<floating_numeric> ::= FLT | DBL
+

@@ -21,11 +21,15 @@
 <logic_factor> ::= (logical_expr) | !<logical_expr> | <id> | <literal>
 <declare_assign> ::= <declare> = <expr>
 
-<if_stmt> ::= <matched> | <unmatched>
-<matched> ::= if (<expr>) {<matched>} else {<matched>} | <non_if_stmt>
-<non_if_stmt> ::= <stmt>;<non_if_stmt> | <stmt>;
-<unmatched> ::= if (<expr>) {<stmt_list>} | if (<expr>) {<matched>} else {<unmatched>}
+//
+<conditional_expr> ::= <id> | <relational_exp>
+<relational_exp> ::= <exp><relational_op><exp>
 
+<if_stmt> ::= <matched> | <unmatched>
+<matched> ::= if (<conditional_expr>) {<matched>} else {<matched>} | <non_if_stmt>
+<non_if_stmt> ::= <stmt>;<non_if_stmt> | <stmt>;
+<unmatched> ::= if (<conditional_expr>) {<stmt_list>} | if (<conditional_expr>) {<matched>} else {<unmatched>}
+//
 
 
 
@@ -37,11 +41,14 @@
 <for_check> ::= <expr>
 <for_update> ::= 
 <while_loop> ::= while (<expr>){<stmt_list>}
+<times_loop> ::= times ( # <positive_int> ) {<stmt_list>}
 
 <relational_op> ::= <= | >= | < | > | == 
 <assignment_op> ::= = | += | -= | *= | /= |**= | %=
 <id> ::= <char> | <char><id> | <id><digit>
-<int> ::= <digit> | <digit><int> | -<digit> | -<digit><int>
+<int> ::= <positive_int> | <negative_int>
+<positive_int> ::= <digit> | <digit><int> 
+<negative_int> ::= -<digit> | -<digit><int>
 <digit> ::= 0|1|2|3|4|5|6|7|8|9
 <char> ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
 <type> ::= <numeric_type> | BOL

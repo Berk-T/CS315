@@ -41,7 +41,8 @@
 <for_check> ::= <expr>
 <for_update> ::= 
 <while_loop> ::= while (<expr>){<stmt_list>}
-<times_loop> ::= times ( # <positive_int> ) {<stmt_list>}
+<times_loop> ::= times (#<positive_int>) {<stmt_list>}
+<dowhile_loop> ::= do {<stmt_list>} while (<expr>)
 
 <relational_op> ::= <= | >= | < | > | == 
 <assignment_op> ::= = | += | -= | *= | /= |**= | %=

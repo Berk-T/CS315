@@ -84,7 +84,7 @@
 <timestamp> ::= GET_TIME
 <wifi> ::= CONNECT_BASE
 <primitive_keyword> ::= GET_INC | GET_ALT | GET_TEMP | GET_ACC | CAM_ON | CAM_OFF | SNAP_PIC | GET_TIME | CONNECT_BASE
-<relational_op> ::= <= | >= | < | > | == 
+<relational_op> ::= <= | >= | < | > | == | !=
 <assignment_op> ::= = | += | -= | *= | /= |**= | %=
 <id> ::= <normal_chars> | <normal_chars><id> | <id><digit>
 <signed_int> ::= <positive_int> | <negative_int>

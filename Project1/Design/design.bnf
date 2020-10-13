@@ -58,9 +58,9 @@
 <for_init> ::=  <for_init>, <assign> | <for_init>, <declare> | <for_init>, <declare_assign> | <declare_assign> | <assign> | <declare>
 <for_condition> ::= <conditional_expr>
 <for_update> ::= <assignment> | <update_expr>
-<while_loop> ::= WHILE (<expr>){<stmt_list>}
-<times_loop> ::= TIMES (<positive_int>) {<stmt_list>}
-<dowhile_loop> ::= DO {<stmt_list>} WHILE (<conditional_expr>)
+<while_loop> ::= while (<expr>){<stmt_list>}
+<times_loop> ::= times (<positive_int>) {<stmt_list>}
+<dowhile_loop> ::= do {<stmt_list>} while (<conditional_expr>)
 <update_expr> ::= <increment> | <decrement>
 <increment> ::= <id>++
 <decrement> ::= <id>--

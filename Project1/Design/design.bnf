@@ -96,7 +96,7 @@
 <double> ::= <float>
 <bool> ::= TRUE | FALSE
 <digit> ::= 0|1|2|3|4|5|6|7|8|9
-<string> ::= " <string_exp> " | ""
+<string> ::= "<string_exp>" | ""
 <string_exp> :: <all_chars> | <all_chars><string> 
 <char> ::= '<all_chars>'
 <all_chars> ::= <normal_chars> | <special_chars> | <space>

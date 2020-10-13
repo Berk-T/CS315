@@ -1,0 +1,30 @@
+#This is an example program for the HOVER language that shows basic structures.#
+
+FLT FUNC foo(INT X, STR Y, CHR Z, FLT Q, BOL W) {
+	FLT F;
+	CAM_ON;
+	FOR(INT i=20; i > 0; i--){
+		SNAP_PIC;
+	} 
+	CAM_OFF;
+	WHILE(W){
+		IF(GET_ALT > X){
+			W = FALSE;
+		} ELSE {
+			Z = 'c';
+			F = GET_TEMP;	
+		}
+		X++;
+		Y += "this is a string";
+	};
+	RETURN GET_TIME;
+};
+
+CONNECT_BASE;
+INT X = 5;
+STR S = "BAR";
+CHR C = 'P';
+FLT F = -45.21412;
+BOL B = TRUE;
+FLT result = foo(X,S,C,F,B);
+

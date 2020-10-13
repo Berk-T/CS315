@@ -1,0 +1,50 @@
+#This is an example program in the HOVER language to show added functionality#
+INT FUNC doLoops(INT times, FLT altitude, BOL inverted){
+	TIMES( times ) {
+		IF(inverted){
+			#TO-DO: Write code so that drone
+			does inverted loop-de-loops#
+		} ELSE IF (!inverted){
+			#TO-DO: Write code so that drone
+                        does loop-de-loops#
+		};
+		WAIT 500;
+	};
+	#Return remaining battery#
+	RETURN GET_BATTERY;
+};
+
+#Constant for how many times to do loop.#
+CONSTANT INT loop = 10;
+
+FLT remaining_battery,time;
+
+#3-Dimensional array to hold time,battery,acceleration#
+FLT[][] data;
+INT index = 0;
+DO{
+	remaining_battery = doLoops(loop,43.21,FALSE);
+	time = GET_TIME;
+	IF(GET_STORAGE > 1024){
+		SNAP_PIC;
+	};
+	data[index][0] = time;
+	data[index][1] = remaining_battery;
+	data[index][2] = GET_ACC;
+	index++;
+} WHILE (remaining_battery WITHIN 0.1,1.0 AND GET_ACC OUTSIDE 10.0,15.0);
+
+#Connect to base wifi after loops are done.#
+CONNECT_BASE;
+
+#Read from user and write data at index.#
+
+INT input = -1;
+
+DO{
+	WRITE "Type index to show data for: (-1 to exit)";
+	READ input;
+	IF(input WITHIN 0 AND GET_SIZE 0 data) {
+		WRITE "time: " + data[input][0] + " battery: " + data[input][1] + " acc: " + data[input][2] + "\n";	
+	}
+}WHILE(input != -1);

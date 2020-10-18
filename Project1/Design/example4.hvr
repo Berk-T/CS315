@@ -1,0 +1,17 @@
+#This is a very simple program to show HOVER's recursion capability.#
+
+#A very bad way of implementing a fibonacci function, for 
+educational purposes only.#
+INT FUNC fib(INT n){
+    IF( n <= 1){
+        RETURN n;
+    }
+    ELSE{
+        INT a = n - 1;
+        INT b = n - 2;
+        RETURN fib(a) + fib(b)
+    };
+}
+
+INT result = fib(5)l
+WRITE result;

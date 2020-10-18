@@ -1,3 +1,3 @@
 lex: 
-	lex HOVER.l
-	gcc -o scanner lex.yy.c
+	lex HOVER-less.l
+	gcc -o scanner-less lex.yy.c

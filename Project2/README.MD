@@ -1,2 +1,2 @@
-CS 315 - Project 1
-Complete BNF description and lexical analyzer of The HOVER language.
+CS 315 - Project 2
+Complete BNF description, lexical analyzer and yacc parser for the HOVER language.

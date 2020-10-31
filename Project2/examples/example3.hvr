@@ -1,0 +1,26 @@
+START
+BOL b1;
+BOL b2;
+BOL b3;
+b1 = TRUE;
+b2 = TRUE; 
+b3 = FALSE;
+
+FOR (INT x = 0, INT y; x < 100; x++){
+    b1 = b2 OR b3 AND (b1 AND b2);
+    IF(b1){
+        WRITE ("b1 is TRUE");
+    }
+    ELSE{
+        WRITE ("b1 is FALSE");
+    };
+    WRITE (b1);
+    READ ("example.txt") INTO input;
+    IF (INPUT WITHIN 50,75){
+        b2 = FALSE;
+    }
+    ELSE{
+        b2 = TRUE;
+    };
+};
+END

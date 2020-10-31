@@ -1,4 +1,4 @@
-lex: 
-	lex HOVER-less.l
-	yacc HOVER-less.y
-	gcc -o scanner-less y.tab.c
+parser: 
+	lex HOVER.l
+	yacc HOVER.y
+	gcc -o parser y.tab.c

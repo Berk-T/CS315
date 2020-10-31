@@ -1,7 +1,9 @@
 START
 #This is an example program for the HOVER language that shows basic structures.#
 
+
 FLT FUNC foo(INT X, STR Y, CHR Z, FLT Q, BOL W) {
+	CONNECT_BASE;
 	FLT F;
 	CAM_ON;
 	Y = "this is a string";
@@ -21,7 +23,6 @@ FLT FUNC foo(INT X, STR Y, CHR Z, FLT Q, BOL W) {
 	RETURN GET_TIME;
 };
 
-CONNECT_BASE;
 INT X = 5;
 STR S = "BAR";
 CHR C = 'P';

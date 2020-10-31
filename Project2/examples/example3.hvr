@@ -16,7 +16,7 @@ FOR (INT x = 0, INT y; x < 100; x++){
     };
     WRITE (b1);
     READ ("example.txt") INTO input;
-    IF (INPUT WITHIN 50,75){
+    IF (input WITHIN 50,75){
         b2 = FALSE;
     }
     ELSE{

@@ -1,5 +1,8 @@
 START
 #This is an example program in the HOVER language to show added functionality#
+
+CONNECT_BASE;
+
 INT FUNC doLoops(INT times, FLT altitude, BOL inverted){
 	TIMES( times ) {
 		IF(inverted){
@@ -29,12 +32,11 @@ DO{
 	WRITE (time);
 } WHILE (remaining_battery WITHIN 0.1,1.0);
 
-#Connect to base wifi after loops are done.#
-CONNECT_BASE;
+STR input;
+READ INTO input;
 
-#Read from user and write data at index.#
-
-INT input = -1;
+#write the input to the file output.txt#
+WRITE (input) INTO ("output.txt");
 
 #This is a 
 multi line long

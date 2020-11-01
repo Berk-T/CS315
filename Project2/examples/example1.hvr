@@ -1,9 +1,14 @@
 START
 #This is an example program for the HOVER language that shows basic structures.#
 
-
 FLT FUNC foo(INT X, STR Y, CHR Z, FLT Q, BOL W) {
 	CONNECT_BASE;
+	FOR (INT i=10; i WITHIN 5,100; i++){
+		X = X + 1;
+                IF (i**2 == 100){
+			RETURN X;
+		};
+	};
 	FLT F;
 	CAM_ON;
 	Y = "this is a string";

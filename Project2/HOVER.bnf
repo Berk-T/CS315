@@ -39,7 +39,7 @@
 <if_stmt> ::= <matched> | <unmatched>
 <matched> ::= IF (<constant_expr>) <matched> ELSE <matched> | {<if_stmt_list>}
 <unmatched> ::= IF (<constant_expr>) <if_stmt> | IF (<constant_expr>) <matched> ELSE <unmatched>
-<if_stmt_list> ::= <stmt_list> | <stmt_list> <return_stmt>;
+<if_stmt_list> ::= <stmt_list> | <stmt_list> <return_stmt>; | <return_stmt>;
 <for_loop> ::= FOR (<for_init>;<for_condition>;<for_update>) {<stmt_list>}
 <for_init> ::=   <declare_assign_stmts> | <for_init>, <declare_assign_stmts> 
 <for_condition> ::= <constant_expr>

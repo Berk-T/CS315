@@ -54,7 +54,7 @@ range_keyword: WITHIN | OUTSIDE;
 if_stmt: matched | unmatched;
 matched: IF LP constant_expr RP matched ELSE matched | LCB if_stmt_list RCB;
 unmatched: IF LP constant_expr RP if_stmt | IF LP constant_expr RP matched ELSE unmatched;
-if_stmt_list: stmt_list | stmt_list return_stmt SC; 
+if_stmt_list: stmt_list | stmt_list return_stmt SC | return_stmt SC; 
 for_loop: FOR LP for_init SC for_condition SC for_update RP LCB stmt_list RCB;
 for_init: declare_assign_stmts | for_init COMMA declare_assign_stmts;
 for_condition: constant_expr;
